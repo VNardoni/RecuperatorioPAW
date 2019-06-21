@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Formulario{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+    <table>
+            <th onclick="sortTable(0,'miTabla')">Apellido y Nombre</th>
+            <th onclick="sortTable(1,'miTabla')">Email</th>
+            <th onclick="sortTable(2,'miTabla')">Nota 1</th>
+            <th onclick="sortTable(3,'miTabla')">Nota 2</th>
+            <th onclick="sortTable(4,'miTabla')">Nota 3</th>
+            <th onclick="sortTable(5,'miTabla')">Promedio</th>
+            
+
+        {% for alumno in alumnos %}
+        
+        <tr>
+            <td>{{ alumno.nombre }}</td>
+            <td>{{ alumno.email}}</td>
+            <td gbcolor="#dddddd" onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">{{ alumno.nota1}}</td>
+            <td gbcolor="#dddddd" onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">{{ alumno.nota2}}</td>
+            <td gbcolor="#dddddd" onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">{{ alumno.nota3}}</td>
+            <td>{{ alumno.promedio}}</td>
+        </tr>
+        {% endfor %}
+</table>
+
+        
+
+{% endblock %}
+
+{% block footer %}
+    {{ include('partials/footer.html')}}
+{% endblock %}

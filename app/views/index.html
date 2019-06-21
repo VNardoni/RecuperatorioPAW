@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+    <div class="container-main">
+        <h5>Nardoni Valentin</h5>
+        <h5>Legajo 127609</h5>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ include('partials/footer.html')}}
+{% endblock %}

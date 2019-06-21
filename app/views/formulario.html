@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Formulario{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+    <div class="contenedor-form">
+        <form class="formulario" action="/registrarUsuario" method="post">
+            <label for="nombre">Apellido y nombre:</label> 
+            <input type="text" name="nombre" required><br>
+            
+            <label for="email">Email:</label> 
+            <input type="email" name="email" required><br>
+            
+            <label for="nota1">Primer Nota:</label>
+            <input type="number" name="nota1" min="1" max="10"><br> 
+            
+            <label for="nota2">Segunda Nota:</label>
+            <input type="number" name="nota2" min="1" max="10"><br> 
+            
+            <label for="nota3">Tercer Nota:</label>
+            <input type="number" name="nota3" min="1" max="10"><br> 
+            
+            
+            <button type="submit" name="submit">Enviar</button> 
+            <button type="reset" name="reset">Limpiar</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ include('partials/footer.html')}}
+{% endblock %}
